@@ -1,0 +1,259 @@
+*{
+  /* border:2px green dashed; */
+  margin:0px;
+  padding:0px; 
+}
+
+.resumelink { 
+  color: lightseagreen;
+  text-decoration: none;
+
+}
+
+.resumelink a{ 
+  text-decoration: none;
+
+}
+
+.resumelink a:hover {  
+  color: darkorange;
+  text-decoration: underline;
+
+}
+
+.icon svg {
+  width:40%;
+}
+
+
+
+
+
+body{
+    
+    font-family: 'Helvetica', sans-serif;
+    background-image: url(ASSETS/websitebackground.svg);
+    background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    
+}
+
+/* what contains everything on the page */
+.container{
+  /* margin-right:3em; */
+  min-width:100%;
+  /* width:100%; */
+  height:100vh;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+        "icon"
+        "nav"
+        "content"
+        "footer";
+}
+
+/* step one: name your sections */
+/* the sections of my about me page */
+.icon,
+ nav,
+ .content,
+ footer{
+   padding-left: 3em;
+   padding-right: 3em;
+   text-align: center;
+}
+
+.icon svg {
+  width:40%;
+}
+
+/* navigation bar styling */
+
+nav{
+  margin-left:2em;
+  margin-top: 1.2em;
+  grid-area:nav;
+  justify-content: center;
+  text-align:center;
+  padding-left:1em;
+  padding-right: 1em;
+  background-color: lightseagreen;
+    width: 500px;
+  
+  
+}
+nav ul {
+  margin:0;
+  padding:0;
+  display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  text-align: center;
+}
+nav li{
+  padding: 1em 0;
+  list-style-type: none;
+  padding: 25px;
+  font-size: 1.5em;
+}
+
+nav li a {
+  color: darkslategray;
+  font-weight: 400;
+  opacity: 0.6;
+  text-decoration: none;
+  transition: .3s;
+}
+
+nav li a:hover {
+  color: lightgoldenrodyellow;
+  opacity: 1;
+  text-decoration: none;
+  
+}
+
+
+
+/* a:link {
+    text-decoration: none;
+  } */
+  
+a:visited {
+    text-decoration: none;
+  }
+
+/* content section */
+.content{
+  grid-area:content;
+  max-width:600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 7em;
+  }
+
+.content img{
+  width: 100%;
+  border-radius: 8%;
+  margin-bottom: 4em;
+}
+
+.content p{
+  text-align: left;
+  font-size:1.2em;
+  line-height: 1.3em;
+
+}
+.paragraph2{
+  text-indent: 2em;
+}
+/* the span tag that wrap starts off my paragraph */
+.bigText {
+  font-size:2em;
+  padding-right:.5em;
+}
+footer{
+  grid-area:footer;
+  background-color: lightseagreen;
+}
+footer p{
+  font-size:2em;
+}
+
+footer li {
+  display:inline;
+}
+
+footer ul {
+  max-width: 640px;
+  margin: 2em auto;
+  padding:0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  
+}
+footer ul li{
+  list-style: none;
+  align-self:flex-end;
+  
+}
+footer ul li a {
+  text-decoration:none;
+  color: black;
+  opacity:.6;
+  transition: .3s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+footer ul li a:hover {
+  text-decoration:none;
+  color:lightgoldenrodyellow;
+}
+
+.about{
+  font-weight: bold;
+  text-decoration-color: black;
+  
+}
+
+
+
+footer svg {
+  width:20%;
+}
+
+footer p{
+  font-size: 1em;
+}
+/* grid system for desktop */
+@media (min-width:1040px){
+  .container{
+    width:100%;
+    height:100vh;
+    display:grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+          "nav icon"
+          "content content"
+          "content content"
+          "footer footer";
+  }
+    nav ul{
+      flex-direction: row;
+    }
+    .icon img {
+      width: 10%;
+      padding-left:1125px;
+      text-align: right;
+    }
+
+    .content p{
+      padding-top: 50px;
+      line-height: 1.5em;
+      
+    }
+   
+
+}
+
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
